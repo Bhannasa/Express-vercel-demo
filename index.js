@@ -1,11 +1,11 @@
 import express from "express";
 
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 80;
 app.use("/", (req, res) => {
   res.json({ message: "Hello From Express App" });
 });
 
-app.listen(9000, () => {
+app.listen(port, () => {
   console.log(`Starting Server on Port ${port}`);
 });
